@@ -1,0 +1,38 @@
+.btn,
+.jumbotron,
+.nav :hover {
+  border-radius: 0px;
+}
+
+body {
+  background: #343a40;
+}
+.container-fluid {
+  padding-right: 0;
+  padding-left: 0;
+}
+/* footer {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  height: 2%;
+} */
+
+.card:hover {
+  transform: scale(1.01);
+  box-shadow: 0 10px 20px rgba(0, 1, 0, 0.12), 0 4px 8px rgba(0, 1, 0, 0.06);
+}
+
+/* body {
+  
+  background: #343a40;
+  display: grid;
+  grid-template-rows: 1fr auto;
+} */
+
+/* footer {
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+*/
