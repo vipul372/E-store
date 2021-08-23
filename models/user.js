@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const crypto = require("crypto");  //inbuilt library in node.js
-const uuidv1 = require("uuid/v1"); //uuid will used to generate SALT (unique random number)
+const { v4: uuidv4 } = require('uuid'); //uuid will used to generate SALT (unique random number)
 
 var userSchema = new mongoose.Schema(
   {
@@ -50,7 +50,7 @@ userSchema
   .virtual("password") //taking the user entered password into virtual field
   .set(function(password) {
     this._password = password; //storing the actual password in a private variable
-    this.salt = uuidv1(); //generating salt
+    this.salt = uuidv4(); //generating salt
     this.encry_password = this.securePassword(password); //storing the encrypted pass into encry_password field
   })
   .get(function() {

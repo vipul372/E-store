@@ -1,6 +1,6 @@
 const User = require("../models/user"); //import User class(model) from models folder
 const { check, validationResult } = require('express-validator'); //importing express validator
-var exressJwt = require('express-jwt');
+var expressJwt = require('express-jwt');
 var jwt = require('jsonwebtoken');
 
 exports.signup = (req, res) => {
@@ -69,9 +69,10 @@ exports.signout = (req, res) => {
 };
 
 //Protected routes
-exports.isSignedIn = exressJwt({
+exports.isSignedIn = expressJwt({
   secret: process.env.SECRET,
-  userProperty: "auth"
+  userProperty: "auth",
+  algorithms: ['RS256']
 })
 
 //Custom Middleware
