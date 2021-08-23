@@ -19,7 +19,7 @@ const paymentBRoutes = require("./routes/paymentBraintree") //Braintree payment 
 
 //DB connection
 const DB_URI =
-  process.env.NODE_ENV === "production"
+  process.env.NODE_ENV == "production"
     ? process.env.DATABASE_PROD
     : process.env.DATABASE_DEV
 mongoose
